@@ -1,0 +1,110 @@
+class Administrator
+{
+    1..* -- * Course;
+public boolean loginAdministratorAccount(String Username,String Password){
+
+}
+public boolean createCourse(String coursecode,String  coursename){
+
+}
+public boolean editCourse(String coursecode,String coursename){
+
+}
+public boolean deletecourse(String coursecode,String arg1){
+
+}
+public boolean deleteAccountsInstructor(String username,String password){
+
+}
+public boolean deleteAccountsStudent(String username,String password){
+
+}
+}
+
+class Developer
+{
+  public void createAdministratorAcount(String Username,String password){
+
+}
+}
+
+class Acount
+{
+  username;
+  password;
+  1..* -- 1..* Developer;
+  1 -- 1 Administrator;
+  1 -- 1 Instructor;
+  1 -- 1 Student;
+}
+
+class Course
+{
+  coursecode;
+  password;
+  courseday;
+  coursehour;
+  coursedescription;
+  coursestudentcapacity;
+}
+
+class Instructor 
+{
+public boolean createInstructorAccount(String Username,String password){
+
+}
+public boolean loginInstructorAccount(String Username,String password){
+
+}
+}
+
+class Student
+{
+  
+public boolean createInstructorAccount(String Username,String password){
+
+}
+public boolean loginInstructorAccount(String Username,String password){
+
+}
+}
+
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class Administrator
+{
+  position -1 142 377 160;
+  position.association Administrator__Course 25,143 81,0;
+  position.association Administrator__Course 79,76 80,0;
+}
+
+class Developer
+{
+  position 615 63 264 76;
+}
+
+class Acount
+{
+  position 399 33 143 93;
+  position.association Acount__Developer 144,20 0,44;
+  position.association Acount__Administrator 0,93 378,0;
+  position.association Acount__Instructor 61,93 66,0;
+}
+
+class Course
+{
+  position 18 480 224 160;
+}
+
+class Instructor
+{
+  position 520 206 362 93;
+}
+
+class Student
+{
+  position 363 427 362 93;
+}
