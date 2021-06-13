@@ -46,7 +46,6 @@ public class DBHandler extends SQLiteOpenHelper{
         //value map
         values.put(COLUMN_USERNAME, user.getUsername());
         values.put(COLUMN_PASSWORD, user.getPassword());
-        values.put(COLUMN_ROLE, user.getRole());
 
         //insert values
         long queryResult = db.insert(TABLE_NAME, null, values);

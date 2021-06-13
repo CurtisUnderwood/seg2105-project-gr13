@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Create User Object to Log In
-                User user = new User(usernameBox.getText().toString(), passwordBox.getText().toString(), "Student");
+                User user = new User(usernameBox.getText().toString(), passwordBox.getText().toString());
                 boolean exists = db.checkUser(user);
                 if(exists){
                     //Switch to Logged In Activity
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Create User Object
-                User user = new User(usernameBox.getText().toString(), passwordBox.getText().toString(), "Student");
+                User user = new User(usernameBox.getText().toString(), passwordBox.getText().toString());
                 boolean registered = db.registerUser(user);
 
                 if(registered){

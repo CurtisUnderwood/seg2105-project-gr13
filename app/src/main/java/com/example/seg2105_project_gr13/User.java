@@ -4,25 +4,23 @@ public class User {
     private int _id;
     private String _username;
     private String _password;
-    private String _role;
 
     //constructor
     public User(){
 
     }
 
-    public User(int id, String username, String password, String role){
+    public User(int id, String username, String password){
         _id = id;
         _username = username;
         _password = password;
-        _role = role;
     }
 
-    public User(String username, String password, String role){
+    public User(String username, String password){
         _username = username;
         _password = password;
-        _role = role;
     }
+
 
     //setters and getters
     public void setID(int id) { _id = id;}
@@ -31,6 +29,4 @@ public class User {
     public String getUsername() { return _username;}
     public void setPassword(String password) { _password = password;}
     public String getPassword() { return _password;}
-    public void setRole(String role) { _role = role;}
-    public String getRole() { return _role;}
 }

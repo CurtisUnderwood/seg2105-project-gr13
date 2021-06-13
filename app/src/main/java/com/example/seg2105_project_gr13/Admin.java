@@ -1,6 +1,6 @@
 package com.example.seg2105_project_gr13;
 
-public class Admin extends Account{
+public class Admin extends User{
 
     public Admin(){
         super.setUsername("admin");
@@ -21,7 +21,7 @@ public class Admin extends Account{
         // delete
     }
 
-    public void deleteAccount(Account ac){
+    public void deleteAccount(User user){
         // delete
     }
 
