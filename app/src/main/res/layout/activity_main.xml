@@ -7,28 +7,27 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-16dp">
+        tools:layout_editor_absoluteX="-16dp"><![CDATA[>
+
+
+
+        ]]>
 
         <TextView
-            android:id="@+id/textView2"
-            and
-            android:layout_width="397dp"
-            android:layout_height="43dp"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="618dp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center_horizontal"
-            android:text="Welcome to School App"
-            android:textSize="20sp" />
+            android:layout_marginEnd="108dp"
+            android:layout_marginRight="108dp"
+            android:layout_marginBottom="264dp"
+            android:text="Already have an Account? Log In" />
 
         <EditText
             android:id="@+id/editTextLogInUsername"
@@ -45,20 +44,22 @@
             android:inputType="textPersonName"
             android:text="Username" />
 
-        <EditText
-            android:id="@+id/editTextLogInPass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="397dp"
+            android:layout_height="43dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="82dp"
-            android:layout_marginRight="81dp"
-            android:layout_marginBottom="462dp"
-            android:width="250dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Password" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="609dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_horizontal"
+            android:text="Welcome to School App"
+            android:textSize="20sp" />
 
         <RadioGroup
             android:id="@+id/rdGroupType"
@@ -85,6 +86,19 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/btnLogIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="83dp"
+            android:layout_marginRight="83dp"
+            android:layout_marginBottom="197dp"
+            android:width="250dp"
+            android:text="Log In" />
+
+        <Button
             android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,28 +111,20 @@
             android:width="250dp"
             android:text="Sign Up" />
 
-        <TextView
-            android:id="@+id/textView"
+        <EditText
+            android:id="@+id/editTextLogInPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="101dp"
-            android:layout_marginRight="101dp"
-            android:layout_marginBottom="123dp"
-            android:text="Already have an Account? Log In" />
-
-        <Button
-            android:id="@+id/btnLogIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="83dp"
-            android:layout_marginRight="83dp"
-            android:layout_marginBottom="57dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginRight="81dp"
+            android:layout_marginBottom="462dp"
             android:width="250dp"
-            android:text="Log In" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Password" />
+    </RelativeLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
