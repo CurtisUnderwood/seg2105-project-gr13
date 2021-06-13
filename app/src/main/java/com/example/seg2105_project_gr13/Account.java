@@ -2,7 +2,7 @@ package com.example.seg2105_project_gr13;
 
 public class Account {
 
-    private String username = "admin", password = "admin123";
+    private String username, password;
 
 
 
@@ -22,6 +22,5 @@ public class Account {
         return password;
     }
 
-    public
 
 }
