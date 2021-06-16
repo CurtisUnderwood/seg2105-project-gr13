@@ -79,11 +79,11 @@
                     android:text="Course Code" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/txtId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="TextView" />
+                    android:text="None" />
             </TableRow>
 
             <TableRow
@@ -97,7 +97,7 @@
                     android:text="Course Name" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/editTextCourseName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -117,7 +117,7 @@
                     android:text="Course Code" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/editTextCourseCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -137,28 +137,31 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnAddCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Add" />
+                android:text="Add"
+                android:onClick="newCourse"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnDeleteCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Delete" />
+                android:text="Delete"
+                android:onClick="removeCourse"/>
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnFindCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Find" />
+                android:text="Find"
+                android:onClick="findCourse"/>
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnEditCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
