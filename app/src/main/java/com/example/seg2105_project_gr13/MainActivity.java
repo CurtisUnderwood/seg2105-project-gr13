@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         db = new DBHandler(this);
 
+        Admin a = new Admin();
+        boolean registered = db.registerUser(a);
+
         loginUser();
     }
 
@@ -39,13 +42,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Create User Object to Log In
-                User user = new User(usernameBox.getText().toString(), passwordBox.getText().toString());
-                boolean exists = db.checkUser(user);
-                if(exists){
-                    //Switch to Logged In Activity
-                }else
-                {
-                    //Error
+                String usr = usernameBox.getText().toString(), pword = passwordBox.getText().toString();
+
+                if(usr.equals("admin") && pword.equals("admin123")) { setContentView(R.layout.activity_admin); }
+
+                else{
+                    User user = new User(usr, pword);
+                    boolean exists = db.checkUser(user);
+                    if(exists){
+                        //Switch to Logged In Activity
+                        setContentView(R.layout.activity_welcome);
+                    }
+                    else{ //Error
+                    }
                 }
 
             }
@@ -63,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 if(registered){
                     //Registered
                     Toast.makeText(MainActivity.this, "User Registered.", Toast.LENGTH_SHORT).show();
+                    setContentView(R.layout.activity_welcome);
                 }else
                 {
                     //Error Message
