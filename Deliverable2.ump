@@ -1,0 +1,142 @@
+//Project UML Diagram
+
+//Namespace for core of the system.
+namespace Project.core;
+
+class Account {
+  username;
+  password;
+  1 -- 1 Administrator;
+  1 -- 1..* Instructor;
+  1 -- 1..* Student;
+}
+//Abstract
+class Administrator {
+ isA Account;
+  1 -- 0..* Course;
+  
+  //Methods
+  public boolean loginAdministratorAccount(String Username,String Password){
+  
+  }
+  public boolean createCourse(String coursecode,String  coursename){
+  
+  }
+  public boolean editCourse(String coursecode,String coursename){
+  
+  }
+  public boolean deleteCourse(String coursecode,String arg1){
+  
+  }
+  public boolean deleteAccountsInstructor(String username,String password){
+  
+  }
+  public boolean deleteAccountsStudent(String username,String password){
+  
+  }
+}
+
+class Student {
+ isA Account;
+  
+  //Methods
+  public boolean createInstructorAccount(String Username,String password){
+
+  }
+  public boolean loginInstructorAccount(String Username,String password){
+  
+  }
+}
+
+class Instructor {
+ isA Account;
+ 1 -- 0..* Course;
+  
+  //Methods
+  public boolean createInstructorAccount(String Username,String password){
+
+  }
+  public boolean loginInstructorAccount(String Username,String password){
+  
+  }
+  public boolean assignInstructor(String coursename,String coursecode){
+  
+  }
+    public boolean addCourseDay(String coursename,String coursecode){
+  
+  }
+    public boolean addCourseHour(String coursename,String coursecode){
+  
+  }
+    public boolean addCourseDescription(String coursename,String coursecode){
+  
+  }
+    public boolean addStudentCapacity(String coursename,String coursecode){
+  
+  }
+    public boolean unassignInstructor(String coursename,String coursecode){
+  
+  }
+    public boolean editCourseDay(String coursename,String coursecode,String CourseDay){
+  
+  }
+    public boolean editCourseHour(String coursename,String coursecode,String Coursehour){
+  
+  }
+    public boolean editCourseDescription(String coursename,String coursecode,String CourseDescription){
+  
+  }
+    public boolean editStudentCapacity(String coursename,String coursecode,String StudentCapacity){
+  
+  }
+    public boolean viewAllCourses(String coursename,String coursecode){
+  
+  }
+    public boolean searchCourses(String coursename,String coursecode){
+  
+  }
+  
+}
+
+class Course
+{
+  code;
+  name;
+}//$?[End_of_model]$?
+
+namespace -;
+
+// Positioning
+/*
+@@@testlanguage=java,cpp,php
+*/
+
+class Account
+{
+  position 330 23 141.438 75.3594;
+  position.association Account__Administrator 35,75 30,0;
+  position.association Account__Instructor 122,75 0,25;
+  position.association Account__Student 48,75 0,10;
+}
+
+class Administrator
+{
+  position 116 175 114.016 41.3594;
+  position.association Administrator__Course 30,41 104,0;
+}
+
+class Student
+{
+  position 348 177 109 41.3594;
+}
+
+class Instructor
+{
+  position 613 179 109 41.3594;
+  position.association Course__Instructor 0,10 37,0;
+}
+
+class Course
+{
+  position 319 314 112.422 75.3594;
+}
