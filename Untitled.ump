@@ -1,24 +1,24 @@
 class Administrator
 {
-      isA User;
-1 -- 0..* Course;
-  public boolean loginAdministratorAccount(String Username,String Password){
-  
+  isA User;
+  1 -- 0..* Course;
+  public boolean loginAccount(String Username,String Password){
+    
   }
   public boolean createCourse(String coursecode,String  coursename){
-  
+    
   }
   public boolean editCourse(String coursecode,String coursename){
-  
+    
   }
   public boolean deleteCourse(String coursecode,String arg1){
-  
+    
   }
   public boolean deleteAccountsInstructor(String username,String password){
-  
+    
   }
   public boolean deleteAccountsStudent(String username,String password){
-  
+    
   }
 }
 
@@ -28,74 +28,97 @@ class Account
   username;
   password;
   1 -- 1 Administrator;
-  1 -- 1..* Instructor;
-  1 -- 1..* Student;
+  1 -- 1 Instructor;
+  1 -- 1 Student;
+
 }
 
 class Course
 {
   code;
   name;
+  instructorname;
+  coursedays;
+  coursehours;
+  coursedescription;
+  studentcapacity;
+  enrolledstudentname;
+  
+    * -- 0..1 Instructor;
+  * -- 0..1 Student;
 }
 
-class Instructor 
+class Instructor
 {
   isA User;
-public boolean createInstructorAccount(String Username,String password){
-
-}
-public boolean loginInstructorAccount(String Username,String password){
-
-}
-public boolean assignInstructor(String coursename,String coursecode){
-
-}
+  public boolean createAccount(String Username,String password,String role){
+    
+  }
+  public boolean loginAccount(String Username,String password){
+    
+  }
+  
+  public boolean assignInstructor(String coursename,String coursecode){
+    
+  }
   public boolean addCourseDay(String coursename,String coursecode){
-
-}
+    
+  }
   public boolean addCourseHour(String coursename,String coursecode){
-
-}
+    
+  }
   public boolean addCourseDescription(String coursename,String coursecode){
-
-}
+    
+  }
   public boolean addStudentCapacity(String coursename,String coursecode){
-
-}
+    
+  }
   public boolean unassignInstructor(String coursename,String coursecode){
-
-}
+    
+  }
   public boolean editCourseDay(String coursename,String coursecode,String CourseDay){
-
-}
+    
+  }
   public boolean editCourseHour(String coursename,String coursecode,String Coursehour){
-
-}
+    
+  }
   public boolean editCourseDescription(String coursename,String coursecode,String CourseDescription){
-
-}
+    
+  }
   public boolean editStudentCapacity(String coursename,String coursecode,String StudentCapacity){
-
-}
+    
+  }
   public boolean viewAllCourses(String coursename,String coursecode){
-
-}
+    
+  }
   public boolean searchCourses(String coursename,String coursecode){
-
-}
-
+    
+  }
+  
 }
 
 class Student
 {
   
   isA User;
-public boolean createInstructorAccount(String Username,String password){
-
-}
-public boolean loginInstructorAccount(String Username,String password){
-
-}
+  public boolean createAccount(String Username,String password,String role){
+    
+  }
+  public boolean loginAccount(String Username,String password){
+    
+  }
+  public Course[] viewAavailableCourses(){
+    
+  }
+  public Course[] searchCourses(String coursename,String coursecode,String CourseDay){
+    
+  }
+  public boolean enrollCourse(String coursename,String coursecode){
+    
+  }
+  public boolean unenrollCourse(String coursename,String coursecode){
+    
+  }
 }
 
 
@@ -105,6 +128,12 @@ namespace -;
 
 class User
 {
+   public boolean createAccount(String Username,String password,String role){
+    
+  }
+  public boolean loginAccount(String Username,String password){
+    
+  }
 }
 
 class Administrator
@@ -117,24 +146,26 @@ class Administrator
 
 class Account
 {
-  position 407 553 141 93;
-  position.association Account__Administrator 0,93 378,11;
-  position.association Account__Instructor 142,14 0,289;
+  position 627 445 141 94.0333;
+  position.association Account__Administrator 0,74 378,61;
+  position.association Account__Instructor 142,11 0,41;
 }
 
 class Course
 {
   position 22 541 224 93;
+    position.association Course__Instructor 225,75 118,296;
+  position.association Course__Student 225,44 0,61;
 }
 
 class Instructor
 {
-  position 890 286 392 295;
+  position 896 218 392 296.033;
 }
 
 class Student
 {
-  position 493 345 362 93;
+  position 477 209 362 94.0333;
 }
 
 namespace -;
@@ -142,12 +173,12 @@ namespace -;
 
 class Account
 {
-  position.association Account__Administrator 0,93 378,11;
-  position.association Account__Instructor 142,14 0,289;
-  position.association Account__Student 86,0 8,93;
-    position.association Account__Developer 142,5 0,10;
-position 407 553 141 93;
-}//$?[End_of_model]$?
+  position.association Account__Administrator 0,74 378,61;
+  position.association Account__Instructor 142,11 0,41;
+  position.association Account__Student 86,0 115,161;
+  position.association Account__Developer 142,5 0,10;
+  position 627 445 141 94.0333;
+}
 
 namespace -;
 
@@ -155,4 +186,4 @@ namespace -;
 class User
 {
   position 254 60 109 59;
-}
+}//$?[End_of_model]$?
