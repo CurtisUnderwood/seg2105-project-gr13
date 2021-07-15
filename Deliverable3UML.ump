@@ -1,0 +1,189 @@
+class Administrator
+{
+  isA User;
+  1 -- 0..* Course;
+  public boolean loginAccount(String Username,String Password){
+    
+  }
+  public boolean createCourse(String coursecode,String  coursename){
+    
+  }
+  public boolean editCourse(String coursecode,String coursename){
+    
+  }
+  public boolean deleteCourse(String coursecode,String arg1){
+    
+  }
+  public boolean deleteAccountsInstructor(String username,String password){
+    
+  }
+  public boolean deleteAccountsStudent(String username,String password){
+    
+  }
+}
+
+
+class Account
+{
+  username;
+  password;
+  1 -- 1 Administrator;
+  1 -- 1 Instructor;
+  1 -- 1 Student;
+
+}
+
+class Course
+{
+  code;
+  name;
+  instructorname;
+  coursedays;
+  coursehours;
+  coursedescription;
+  int studentcapacity;
+  enrolledstudentname;
+  
+    * -- 0..1 Instructor;
+  * -- 0..1 Student;
+}
+
+class Instructor
+{
+  isA User;
+  public boolean createAccount(String Username,String password,String role){
+    
+  }
+  public boolean loginAccount(String Username,String password){
+    
+  }
+  
+  public boolean assignInstructor(String coursename,String coursecode){
+    
+  }
+  public boolean addCourseDay(String coursename,String coursecode){
+    
+  }
+  public boolean addCourseHour(String coursename,String coursecode){
+    
+  }
+  public boolean addCourseDescription(String coursename,String coursecode){
+    
+  }
+  public boolean addStudentCapacity(String coursename,String coursecode){
+    
+  }
+  public boolean unassignInstructor(String coursename,String coursecode){
+    
+  }
+  public boolean editCourseDay(String coursename,String coursecode,String CourseDay){
+    
+  }
+  public boolean editCourseHour(String coursename,String coursecode,String Coursehour){
+    
+  }
+  public boolean editCourseDescription(String coursename,String coursecode,String CourseDescription){
+    
+  }
+  public boolean editStudentCapacity(String coursename,String coursecode,String StudentCapacity){
+    
+  }
+  public boolean viewAllCourses(String coursename,String coursecode){
+    
+  }
+  public boolean searchCourses(String coursename,String coursecode){
+    
+  }
+  
+}
+
+class Student
+{
+  
+  isA User;
+  public boolean createAccount(String Username,String password,String role){
+    
+  }
+  public boolean loginAccount(String Username,String password){
+    
+  }
+  public Course[] viewAavailableCourses(){
+    
+  }
+  public Course[] searchCourses(String coursename,String coursecode,String CourseDay){
+    
+  }
+  public boolean enrollCourse(String coursename,String coursecode){
+    
+  }
+  public boolean unenrollCourse(String coursename,String coursecode){
+    
+  }
+}
+
+
+
+namespace -;
+
+
+class User
+{
+   public boolean createAccount(String Username,String password,String role){
+    
+  }
+  public boolean loginAccount(String Username,String password){
+    
+  }
+}
+
+class Administrator
+{
+  position -1 296 377 160;
+  position.association Administrator__Course 27,169 81,0;
+  position.association Administrator__Course 79,76 80,0;
+}
+
+
+class Account
+{
+  position 584 430 141 98.6458;
+  position.association Account__Administrator 0,74 378,61;
+  position.association Account__Instructor 142,7 0,41;
+}
+
+class Course
+{
+  position 22 541 224 197.359;
+    position.association Course__Instructor 225,75 0,304;
+  position.association Course__Student 225,40 0,41;
+}
+
+class Instructor
+{
+  position 896 218 392 296.033;
+}
+
+class Student
+{
+  position 477 209 362 94.0333;
+}
+
+namespace -;
+
+
+class Account
+{
+  position.association Account__Administrator 0,74 378,61;
+  position.association Account__Instructor 142,7 0,41;
+  position.association Account__Student 86,0 116,163;
+  position.association Account__Developer 142,5 0,10;
+  position 584 430 141 98.6458;
+}
+
+namespace -;
+
+
+class User
+{
+  position 489 10 340.891 98.6458;
+}//$?[End_of_model]$?
